@@ -5,7 +5,7 @@
 var ga = document.createElement('script');
 ga.type = 'text/javascript';
 ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'code.jquery.com/jquery-latest.js';
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'code.jquery.com/jquery-3.2.1.min.js';
 
 ga.onload = function() {
     var list = {
@@ -17,18 +17,18 @@ ga.onload = function() {
     $("table[align=center]").find("tr").each(function() {
         var count = 0;
         for (var i = 0; i < 10; i++) {
-            if ($(this).find("td:nth-child(" + (4 + parseInt(i)) + ")").find("div[align=center]").text() != "A+") {
+            if ($(this).find("td:nth-child(" + (4 + parseInt(i)) + ")").find("div[align=center]").text() == "A+") {
                 count++;
             }
         }
 
         if (count >= 8) {
-            list[count].append($(this).find("td:nth-child(3)").text());
+            list[count].push($(this).find("td:nth-child(3)").text());
         }
     });
 
     for (var i = 10;i >= 8;i--) {
-        console.log(i + " A+ : " + list[i]);
+        console.log(i + " A+ : " + list[i].length);
     }
     console.log(list);
 };

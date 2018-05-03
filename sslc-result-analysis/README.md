@@ -11,5 +11,5 @@ A tool to analyse your school's result
 5. Enter the following code and press enter. Wait for 5 seconds and voila !
 
 ```
-var ga = document.createElement('script'); ga.type = 'text/javascript';ga.async = true;ga.src = 'https://raw.githubusercontent.com/subins2000/gist/master/sslc-result-analysis/sslc-result-toppers.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+fetch('https://raw.githubusercontent.com/subins2000/gist/master/sslc-result-analysis/sslc-result-toppers.js').then(response => response.text()).then(text => eval(text))
 ```

@@ -27,6 +27,9 @@ ga.onload = function() {
         }
     });
 
+    for (var i = 10;i >= 8;i--) {
+        console.log(i + " A+ : " + list[i]);
+    }
     console.log(list);
 };
 
